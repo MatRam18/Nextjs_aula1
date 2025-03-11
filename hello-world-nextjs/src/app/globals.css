@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Circular';
+  src: url('/fonts/circular-regular.woff2') format('woff2'),
+       url('/fonts/circular-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #d6d2d2;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Circular', sans-serif;
+}
+
+div.container {
+  display: flex;
+  justify-self: center;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1.rainbow-border {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Circular', sans-serif;
+  padding: 20px;
+  border: 5px solid;
+  border-radius: 15px;
+  background: var(--background);
+  animation: rainbow 1.5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    border-color: red;
+  }
+  14% {
+    border-color: orange;
+  }
+  28% {
+    border-color: yellow;
+  }
+  42% {
+    border-color: green;
+  }
+  57% {
+    border-color: blue;
+  }
+  71% {
+    border-color: indigo;
+  }
+  85% {
+    border-color: violet;
+  }
+  100% {
+    border-color: red;
+  }
+}
